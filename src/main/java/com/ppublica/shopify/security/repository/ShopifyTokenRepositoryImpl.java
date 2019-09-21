@@ -67,11 +67,12 @@ public class ShopifyTokenRepositoryImpl implements TokenRepository {
 
 	@Override
 	public void saveNewStore(String shop, Set<String> scopes, EncryptedTokenAndSalt encryptedTokenAndSalt) {
+		System.out.println("start save "+shop);
 		String scopeString = scopes.stream()
 										.collect(joining(","));
 		
 		jdbc.update(SAVE_ACCESS_TOKEN_CREDENTIALS, shop, encryptedTokenAndSalt.getEncryptedToken(), encryptedTokenAndSalt.getSalt(), scopeString);
-
+		System.out.println("end save "+shop);
 	}
 
 	@Override
