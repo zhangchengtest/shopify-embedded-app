@@ -174,11 +174,14 @@ public class ShopifyOAuth2AuthorizationRequestResolver implements OAuth2Authoriz
 		Map<String, String> uriVariables = new HashMap<>();
 		uriVariables.put("registrationId", clientRegistration.getRegistrationId());
 		System.out.println("FULL URL: "+ UrlUtils.buildFullRequestUrl(request));
-		String baseUrl = UriComponentsBuilder.fromHttpUrl(UrlUtils.buildFullRequestUrl(request))
-				.replaceQuery(null)
-				.replacePath(request.getContextPath())
-				.build()
-				.toUriString();
+//		String baseUrl = UriComponentsBuilder.fromHttpUrl(UrlUtils.buildFullRequestUrl(request))
+//				.replaceQuery(null)
+//				.replacePath(request.getContextPath())
+//				.build()
+//				.toUriString();
+
+		String baseUrl = "https://food.laidanl.com";
+
 		uriVariables.put("baseUrl", baseUrl);
 
 		return UriComponentsBuilder.fromUriString(clientRegistration.getRedirectUriTemplate())

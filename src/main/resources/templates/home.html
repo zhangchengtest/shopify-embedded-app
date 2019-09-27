@@ -6,21 +6,21 @@
   
   <script th:inline="text">
 
-  
+
   /*<![CDATA[*/
-		
+
   		var redirectFromParentPath = '[(${#request.getAttribute("PARENT_AUTHENTICATION_URI")})]';
 		var redirectFromIFramePath = '[(${#request.getAttribute("I_FRAME_AUTHENTICATION_URI")})]';
-		
-		
-		  
+
+
+
 		  // If the current window is the 'parent', change the URL by setting location.href parentRedirectUri
 		  if (window.top == window.self) {
 			  console.log("In parent" + "url: " + redirectFromParentPath);
 			  if(redirectFromParentPath){
 				    window.location.assign(redirectFromParentPath);
 			  }
-		
+
 		  // If the current window is the 'child', change the parent's URL with ShopifyApp.redirect
 		  } else {
 			  console.log("In child" + "url: " + redirectFromIFramePath);
@@ -29,10 +29,10 @@
 			  console.log("If you are seeing this, please login directly from your browser, not the embedded app.")
 		    ShopifyApp.redirect(redirectFromIFramePath);
 		  }
-		  
+
 	/*]]>*/
 		</script>
-  
+
   
   
   <title>TEST</title>

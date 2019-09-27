@@ -45,7 +45,7 @@ public class HomeController {
 	}
 	
 	/*
-	 * Only to be called during the OAuth flow
+	 * Only to be called during the OAuINSTALL_PATHth flow
 	 * 
 	 */
 	@RequestMapping(path = SecurityConfig.ANY_AUTHORIZATION_REDIRECT_PATH, method = RequestMethod.GET)

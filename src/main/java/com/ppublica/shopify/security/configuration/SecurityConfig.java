@@ -72,8 +72,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.headers().frameOptions().disable()
 			  .and()
 			  .requiresChannel()
-			  	.anyRequest()
-			  		.requiresSecure()
+//			  	.anyRequest()
+//			  		.requiresSecure()
 			  .and()
 			  .csrf()
 			  	.ignoringAntMatchers(UNINSTALL_URI + "/*")
@@ -99,7 +99,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	          	.userInfoEndpoint().userService(userService)
 	          .and()
 	          	.successHandler(successHandler)
-	          	.loginPage(LOGIN_ENDPOINT) // for use outside of an embedded app since it involves a redirect
+	          	.loginPage("/init") // for use outside of an embedded app since it involves a redirect
 	          	.failureUrl(AUTHENTICATION_FALURE_URL); // see AbstractAuthenticationProcessingFilter	
 		          
 	}
